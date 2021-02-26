@@ -1,12 +1,9 @@
 var pageEl = document.querySelector(".page");
 var timerEl = document.querySelector(".time");
 
-var resetButton = document.querySelector(".reset");
-
 // when start button is clicked, then the quiz begins
 var startButton = document.querySelector(".start");
-button.addEventListener("click", generateQuiz);
-
+startButton.addEventListener("click", generateQuiz);
 
 // MIGHT WANT TO MAKE THIS QUIZ ITS OWN JS FILE
 // Initialized empty array to store the choices for each question
@@ -50,7 +47,18 @@ function countdown() {
 
 function generateQuiz() {
     var score = 0; // NEED TO DISPLAY THE SCORE
-    
+    pageEl.appendChild(score);
+
+    // creates the choices
+    var choiceA = document.createElement("button");
+    var choiceB = document.createElement("button");
+    var choiceC = document.createElement("button");
+    var choiceD = document.createElement("button");
+
+    pageEl.appendChild(choiceA);
+    pageEl.appendChild(choiceB);
+    pageEl.appendChild(choiceC);
+    pageEl.appendChild(choiceD);
 
     // interates through the array of the questions in the quiz.
     for (var i = 0; i < quiz.length; i++) {
@@ -58,17 +66,13 @@ function generateQuiz() {
         
         question = quiz[i[0]];
 
+        choiceA.innerHTML = quiz[i[1[0]]];
+        choiceB.innerHTML = quiz[i[1[1]]];
+        choiceC.innerHTML = quiz[i[1[2]]];
+        choiceD.innerHTML = quiz[i[1[3]]];
 
-        // FIRGURE OUT HOW TO CONNECT HTML WITH THIS
-        // choiceA = choices[0];
-        // choiceB = choices[1];
-        // choiceC = choices[2];
-        // choiceD = choices[3];
-
-        
-
-        var userChoice = whatever the user selects
-        if userChoice == quiz[2] {
+        var userChoice = pick.addEventListener("click", generateQuiz);
+        if (userChoice == quiz[2]) {
             score++;
         }
         else {
@@ -87,5 +91,6 @@ function displayResults() {
     else {
         page.textContext = "GAME OVER";
     }
+    var resetButton = document.createElement("button");
     resetButton.addEventListener("click", resetGame);
 }
