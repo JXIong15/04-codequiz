@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Box Styling</title>
+    <title>Code Quiz</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
+
   <body>
       <h2>View High Scores</h2>
-      <h2 id="time"></h2>
+      <h2 id="time">30</h2>
+      <h1>Coding Quiz Challenge</h1>
 
-    <div class="start">
-        <h1>Coding Quiz Challenge</h1>
+    <main id="page">
+    <body class="start">
         <h3>Answer all of the questions as accurately as possible before the timer hits 0. Each question pertains to topics 
             around coding, such as html, css, and javascript. Challenge yourself to get the highest score in the shortest 
             amount of time. Think you can beat the clock? Let's see what you got!
         </h3>
         <button id="start">Start Quiz</button>
-    </div>
+    </body>
 
-    <div id="quiz">
-        <h3 id="question"></h3>
-        <ul>
+    <body id="quiz">
+        <!-- <h3 id="question"></h3> -->
+        <!-- <ul>
             <li>
                 <button id="choiceA">1. </button>
             </li>
@@ -34,14 +36,14 @@
             <li>
                 <button id="choiceD">4. </button>
             </li>
-        </ul>
-    </div>
+        </ul> -->
+    </body>
 
-    <div id="results">
-        <!-- NEED TO ADD THE SCORE AND HOW THEY DID -->
-        <button id="again">Play Again?</button>
-    </div>
-
+    <body id="results">
+        <!-- NEED TO ADD THE SCORE AND HOW THEY DID
+        <button id="reset">Play Again?</button> -->
+    </body>
+</main>
     <script src="./script.js"></script>
   </body>
 </html>

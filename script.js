@@ -1,6 +1,12 @@
+var pageEl = document.querySelector(".page");
+var timerEl = document.querySelector(".time");
+
+var resetButton = document.querySelector(".reset");
+
 // when start button is clicked, then the quiz begins
 var startButton = document.querySelector(".start");
 button.addEventListener("click", generateQuiz);
+
 
 // MIGHT WANT TO MAKE THIS QUIZ ITS OWN JS FILE
 // Initialized empty array to store the choices for each question
@@ -43,21 +49,23 @@ function countdown() {
 }
 
 function generateQuiz() {
-    var score = 0;
-    var question = document.getElementById("question");
-    var choiceA = document.getElementById("choiceA");
-    var choiceB = document.getElementById("choiceB");
-    var choiceC = document.getElementById("choiceC");
-    var choiceD = document.getElementById("choiceD");
+    var score = 0; // NEED TO DISPLAY THE SCORE
+    
 
     // interates through the array of the questions in the quiz.
     for (var i = 0; i < quiz.length; i++) {
+        pageEl.textContent = quiz[i];
+        
         question = quiz[i[0]];
 
-        choiceA = choices[0];
-        choiceB = choices[1];
-        choiceC = choices[2];
-        choiceD = choices[3];
+
+        // FIRGURE OUT HOW TO CONNECT HTML WITH THIS
+        // choiceA = choices[0];
+        // choiceB = choices[1];
+        // choiceC = choices[2];
+        // choiceD = choices[3];
+
+        
 
         var userChoice = whatever the user selects
         if userChoice == quiz[2] {
@@ -66,13 +74,18 @@ function generateQuiz() {
         else {
             score--;
         }
-        refresh page to prepare for the next question
     }
     countdown();
     displayResults();
-    // IF TIMELEFT==0 OR I'M DONE WITH THE ARRAY OF QUESTIONS, RESULTS
 }
 
 function displayResults() {
-
+    if (timerEl > 0) {
+        page.textContent = "YOU WIN!!!🏆";
+        // allow user to submit their name and time
+    }
+    else {
+        page.textContext = "GAME OVER";
+    }
+    resetButton.addEventListener("click", resetGame);
 }
