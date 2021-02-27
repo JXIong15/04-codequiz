@@ -1,4 +1,4 @@
-var pageEl = document.querySelector("page");
+var pageEl = document.getElementById("page");
 var timerEl = document.querySelector("time");
 
 // when start button is clicked, then the quiz begins
@@ -45,42 +45,35 @@ function countdown() {
 }
 
 function generateQuiz() {
-    
-    // MAKE THE START PAGE DISAPPEAR
 
-    // var score = 0; // NEED TO DISPLAY THE SCORE
-    // pageEl.appendChild(score);
+    var score = 0; // NEED TO DISPLAY THE SCORE
+    // pageEl.innerHTML = quiz;
 
-    // // creates the choices
-    // var choiceA = document.createElement("button");
-    // var choiceB = document.createElement("button");
-    // var choiceC = document.createElement("button");
-    // var choiceD = document.createElement("button");
+    // creates the choices
+    var choiceA = document.createElement("button");
+    var choiceB = document.createElement("button");
+    var choiceC = document.createElement("button");
+    var choiceD = document.createElement("button");
 
-    // pageEl.appendChild(choiceA);
-    // pageEl.appendChild(choiceB);
-    // pageEl.appendChild(choiceC);
-    // pageEl.appendChild(choiceD);
-
-    // // interates through the array of the questions in the quiz.
-    // for (var i = 0; i < quiz.length; i++) {
-    //     pageEl.textContent = quiz[i];
+    // interates through the array of the questions in the quiz.
+    for (var i = 0; i < quiz.length; i++) {
+        pageEl.innerHTML = quiz[i];
         
-    //     question = quiz[i[0]];
+        question = quiz[i[0]];
 
-    //     choiceA.innerHTML = quiz[i[1[0]]];
-    //     choiceB.innerHTML = quiz[i[1[1]]];
-    //     choiceC.innerHTML = quiz[i[1[2]]];
-    //     choiceD.innerHTML = quiz[i[1[3]]];
+        choiceA.innerHTML = quiz[i[1[0]]];
+        choiceB.innerHTML = quiz[i[1[1]]];
+        choiceC.innerHTML = quiz[i[1[2]]];
+        choiceD.innerHTML = quiz[i[1[3]]];
 
-    //     var userChoice = pick.addEventListener("click", generateQuiz);
-    //     if (userChoice == quiz[2]) {
-    //         score++;
-    //     }
-    //     else {
-    //         score--;
-    //     }
-    // }
+        // var userChoice = pick.addEventListener("click", generateQuiz);
+        // if (userChoice == quiz[2]) {
+        //     score++;
+        // }
+        // else {
+        //     score--;
+        // }
+    }
     // countdown();
     // displayResults();
 }
