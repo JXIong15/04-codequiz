@@ -1,9 +1,8 @@
-var pageEl = document.querySelector(".page");
-var timerEl = document.querySelector(".time");
+var pageEl = document.querySelector("page");
+var timerEl = document.querySelector("time");
 
 // when start button is clicked, then the quiz begins
-var startButton = document.querySelector(".start");
-startButton.addEventListener("click", generateQuiz);
+var startButton = document.getElementById("start").addEventListener("click", generateQuiz);
 
 // MIGHT WANT TO MAKE THIS QUIZ ITS OWN JS FILE
 // Initialized empty array to store the choices for each question
@@ -46,41 +45,44 @@ function countdown() {
 }
 
 function generateQuiz() {
-    var score = 0; // NEED TO DISPLAY THE SCORE
-    pageEl.appendChild(score);
+    
+    // MAKE THE START PAGE DISAPPEAR
 
-    // creates the choices
-    var choiceA = document.createElement("button");
-    var choiceB = document.createElement("button");
-    var choiceC = document.createElement("button");
-    var choiceD = document.createElement("button");
+    // var score = 0; // NEED TO DISPLAY THE SCORE
+    // pageEl.appendChild(score);
 
-    pageEl.appendChild(choiceA);
-    pageEl.appendChild(choiceB);
-    pageEl.appendChild(choiceC);
-    pageEl.appendChild(choiceD);
+    // // creates the choices
+    // var choiceA = document.createElement("button");
+    // var choiceB = document.createElement("button");
+    // var choiceC = document.createElement("button");
+    // var choiceD = document.createElement("button");
 
-    // interates through the array of the questions in the quiz.
-    for (var i = 0; i < quiz.length; i++) {
-        pageEl.textContent = quiz[i];
+    // pageEl.appendChild(choiceA);
+    // pageEl.appendChild(choiceB);
+    // pageEl.appendChild(choiceC);
+    // pageEl.appendChild(choiceD);
+
+    // // interates through the array of the questions in the quiz.
+    // for (var i = 0; i < quiz.length; i++) {
+    //     pageEl.textContent = quiz[i];
         
-        question = quiz[i[0]];
+    //     question = quiz[i[0]];
 
-        choiceA.innerHTML = quiz[i[1[0]]];
-        choiceB.innerHTML = quiz[i[1[1]]];
-        choiceC.innerHTML = quiz[i[1[2]]];
-        choiceD.innerHTML = quiz[i[1[3]]];
+    //     choiceA.innerHTML = quiz[i[1[0]]];
+    //     choiceB.innerHTML = quiz[i[1[1]]];
+    //     choiceC.innerHTML = quiz[i[1[2]]];
+    //     choiceD.innerHTML = quiz[i[1[3]]];
 
-        var userChoice = pick.addEventListener("click", generateQuiz);
-        if (userChoice == quiz[2]) {
-            score++;
-        }
-        else {
-            score--;
-        }
-    }
-    countdown();
-    displayResults();
+    //     var userChoice = pick.addEventListener("click", generateQuiz);
+    //     if (userChoice == quiz[2]) {
+    //         score++;
+    //     }
+    //     else {
+    //         score--;
+    //     }
+    // }
+    // countdown();
+    // displayResults();
 }
 
 function displayResults() {
@@ -91,6 +93,5 @@ function displayResults() {
     else {
         page.textContext = "GAME OVER";
     }
-    var resetButton = document.createElement("button");
-    resetButton.addEventListener("click", resetGame);
+    var resetButton = document.createElement("button").addEventListener("click", resetGame);
 }
