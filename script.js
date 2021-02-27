@@ -25,6 +25,7 @@ var quiz = [
         choices['git upload', 'git push', 'git transfer', 'git pass'],
         choices[1]]
 ];
+console.log(quiz[1]);
 
 function countdown() {
     var timeLeft = 30;
@@ -45,9 +46,8 @@ function countdown() {
 }
 
 function generateQuiz() {
-
+    countdown();
     var score = 0; // NEED TO DISPLAY THE SCORE
-    // pageEl.innerHTML = quiz;
 
     // creates the choices
     var choiceA = document.createElement("button");
@@ -57,25 +57,33 @@ function generateQuiz() {
 
     // interates through the array of the questions in the quiz.
     for (var i = 0; i < quiz.length; i++) {
-        pageEl.innerHTML = quiz[i];
-        
-        question = quiz[i[0]];
+        // pageEl.innerHTML= `<div> 
+        // <h2>this is the question</h2>
+        // <button id='answer1' >answer1</button>
+        // <button id='answer1' >answer1</button>
+        // `;
 
-        choiceA.innerHTML = quiz[i[1[0]]];
-        choiceB.innerHTML = quiz[i[1[1]]];
-        choiceC.innerHTML = quiz[i[1[2]]];
-        choiceD.innerHTML = quiz[i[1[3]]];
+        var quizQuestion = {
+            question: quiz[i[0]],
+            // choiceA = quiz[i[1[0]]],
+            // choiceB = quiz[i[1[1]]],
+            // choiceC = quiz[i[1[2]]],
+            // choiceD = quiz[i[1[3]]],
+            score,
+        }
 
-        // var userChoice = pick.addEventListener("click", generateQuiz);
-        // if (userChoice == quiz[2]) {
-        //     score++;
-        // }
-        // else {
-        //     score--;
-        // }
+        pageEl.innerHTML = quizQuestion;
+
+        var userChoice = pick.addEventListener("click", generateQuiz);
+        if (userChoice == quiz[2]) {
+            score++;
+        }
+        else {
+            score--;
+        }
     }
-    // countdown();
-    // displayResults();
+    
+    displayResults();
 }
 
 function displayResults() {
