@@ -3,9 +3,10 @@ $(document).ready(function () {
     var score = 0;
     var timeLeft = 30;
     var timeInterval;
+    var scoreCard = [] 
 
     // when the user clicks on the high score, it takes them to the high score page
-    $("highscores").on("click",highScoreCard)
+    $("#highscores").on("click",highScoreCard);
 
     // when start button is clicked, then the quiz begins
     $('#startBtn').on("click", startGame);
@@ -123,6 +124,8 @@ $(document).ready(function () {
         else {
             $("#results-message").text("GAME OVER");
         }
+
+        submitScore();
         // creates a reset button for the user to play again if desired
         var resetButton = $("<button>").addClass("btn btn-danger").text("Play Again?").attr("type", "button");
         // resetButton.on("click", document.getElementById('configform').reset());
@@ -132,9 +135,37 @@ $(document).ready(function () {
     }
 
     // displays the high scores
-    function highScoreCard() {
+    function viewHighScoreCard() {
+        console.log("high score");
+        // // clear whatever is currently on the screen
         $("#start").addClass("hide");
         $("#quiz").addClass("hide");
         $("#results").addClass("hide");
+        $("#score-card").removeClass("hide");
+        clearInterval(timeInterval);
+
+
+        // back button to go back to what user was doing
+        $("#backBtn").on("click", history.back());
+
+        // when click go back, time starts again if on the quiz
+    }
+
+    // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
+    function submitScore() {
+        console.log("Submit");
+        // user submits their initials, and score and time are added.
+        // for (var i =0; i < highScoreArray.lenght(); i++) {
+        //     if (newScore > highScoreArray[i]) {
+        //         insert in front of highScoreArray[i];
+        //         break;
+        //     }
+        // if (newScore === highScoreArray[i.s] && timeLeft > highScoreArray[i.t]) {
+        //     insert in front of highScoreArray[i];
+        //          break;
+        // }
+        // }
+        // displays up to top 10 high scores
     }
 })
+
