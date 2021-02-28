@@ -3,47 +3,12 @@ $(document).ready(function () {
     var score = 0;
     var timeLeft = 30;
     var timeInterval;
-    var scoreCard = [] 
 
     // when the user clicks on the high score, it takes them to the high score page
-    $("#highscores").on("click",highScoreCard);
+    $("#highscores").on("click", viewHighScoreCard);
 
     // when start button is clicked, then the quiz begins
     $('#startBtn').on("click", startGame);
-
-    // MIGHT WANT TO MAKE THIS QUIZ ITS OWN JS FILE
-    // quiz questions
-    var quiz = [
-        {
-            question: 'How would I make all the characters in a string capitalized?',
-            choices: [".toLowerCase()", ".toUpperCase", ".toUpperCase()", ".toCapitalized();"],
-            answer: ".toUpperCase()"
-        },
-
-        {
-            question: 'Which is NOT a coding language?',
-            choices: ['Java', 'JavaScript', 'html', 'Python'],
-            answer: 'html'
-        },
-
-        {
-            question: 'What would you use to iterate through an array of a set length?',
-            choices: ['while loop', 'iteration loop', 'loop', 'for loop'],
-            answer: 'for loop'
-        },
-
-        {
-            question: 'How would you move up through the DOM tree?',
-            choices: ['.parent()', 'eq()', '.css()', '.branchUp'],
-            answer: '.parent()'
-        },
-
-        {
-            question: 'How would you use git to upload your work to GitHub?',
-            choices: ['git upload', 'git push', 'git transfer', 'git pass'],
-            answer: 'git push'
-        }
-    ];
 
     // timer
     function countdown() {
@@ -88,15 +53,15 @@ $(document).ready(function () {
     // compares the user choice to the correct answer.
     function evaluateAnswer() {
         $("#answer").html("");
-        
+
         if ($(this).val() !== quiz[qEl].answer) {
             score--;
-            timeLeft-=5;
+            timeLeft -= 5;
             $("#answer").append("Wrong!");
         }
         else {
             score++;
-            timeLeft+=5;
+            timeLeft += 5;
             $("#answer").append("Correct!");
         }
 
@@ -116,7 +81,7 @@ $(document).ready(function () {
         $("#results").removeClass("hide");
         $("#rScore").text(score);
         clearInterval(timeInterval);
-        
+
         if (timeLeft > 0 && score > 0) { //need to make this the high score
             $("#results-message").text("YOU WIN!!!🏆");
             // allow user to submit their name and time
@@ -126,12 +91,6 @@ $(document).ready(function () {
         }
 
         submitScore();
-        // creates a reset button for the user to play again if desired
-        var resetButton = $("<button>").addClass("btn btn-danger").text("Play Again?").attr("type", "button");
-        // resetButton.on("click", document.getElementById('configform').reset());
-        $("#resetBtn").append(resetButton);
-
-        // document.getElementById("page").reset();
     }
 
     // displays the high scores
@@ -144,28 +103,44 @@ $(document).ready(function () {
         $("#score-card").removeClass("hide");
         clearInterval(timeInterval);
 
-
-        // back button to go back to what user was doing
-        $("#backBtn").on("click", history.back());
-
-        // when click go back, time starts again if on the quiz
+        // when "Play Again" is clicked, the page/quiz refreshes
+        $("#resetBtn").on("click", location.reload());
     }
 
+    // allows the user to go back to the main page where they have to restart
+    function backReset() {
+        history.back();
+        location.reload();
+    }
+
+    // an object of user information
+    var scoreCard = [
+        {
+            username: "",
+            userScore: "",
+            userTime: ""
+        }
+    ];
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
         console.log("Submit");
         // user submits their initials, and score and time are added.
-        // for (var i =0; i < highScoreArray.lenght(); i++) {
-        //     if (newScore > highScoreArray[i]) {
-        //         insert in front of highScoreArray[i];
-        //         break;
-        //     }
-        // if (newScore === highScoreArray[i.s] && timeLeft > highScoreArray[i.t]) {
-        //     insert in front of highScoreArray[i];
-        //          break;
-        // }
-        // }
-        // displays up to top 10 high scores
+
+        var newScore = score;
+        var newTime = timeLeft;
+
+        if (!scoreCard.userScore) {
+            scoreCard.userScore = newScore;
+            scoreCard.userTime = newTime;
+        }
+        else {
+            for (var i = 0; i < scoreCard.length(); i++) {
+                if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i]) {
+                    scoreCard.splice(i, 0, newTime);
+                    viewHighScoreCard();
+                }
+            }
+        }
     }
 })
 
