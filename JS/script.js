@@ -95,14 +95,16 @@ $(document).ready(function () {
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
         // user submits their initials, and score and time are added.
-        userForm = $("#user-info").html("");
-        userForm.append('<input type="text">');
-        userForm.append('<input type="submit"> <value="Submit">');
+
+        $("#submitBtn").click(function(){        
+            $("#username").submit(viewHighScoreCard(event)); // Submit the form
+        });
+
 
         // for (var i = 0; i < scoreCard.length(); i++) {
         //     if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
         //         var user = {
-        //             username: $('#user-info').val(),
+        //             username: $('#uname').val(),
         //             userScore: score,
         //             userTime: timeLeft,
         //         }

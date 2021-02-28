@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
-<body id="page">
+<body id="page" class="d-flex flex-column alighn-items-center">
     <nav class="navbar">
         <button id="highscores" style="color:red; font-size: 30px" class="btn btn-link" >View High Scores</button>
         <h2 id="time" style="color:black">30</h2>
@@ -38,7 +38,12 @@
     <main id="results" class="hide">
         <h1 id="results-message"></h1>
         <h2 id="results-score"></h2>
-        <form onsubmit ="viewHighScoreCard()" id="user-info"></form>
+        <form action="action.php" method="post" id="username">
+            <label>Name:</label>
+            <input type="text" id="uname">
+            <button type="button" id="submitBtn">Submit Form</button>
+        </form>
+
         <!-- <p id="username"></p> -->
     </main>
 
