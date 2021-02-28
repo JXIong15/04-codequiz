@@ -123,9 +123,9 @@ $(document).ready(function () {
     ];
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
-        console.log("Submit");
         // user submits their initials, and score and time are added.
-
+        userForm = $("<form></form>");
+        username = userForm.append('<input type="button" value="button">');
         var newScore = score;
         var newTime = timeLeft;
 
@@ -143,4 +143,3 @@ $(document).ready(function () {
         }
     }
 })
-
