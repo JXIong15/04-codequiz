@@ -79,7 +79,7 @@ $(document).ready(function () {
     function displayResults() {
         $("#quiz").addClass("hide");
         $("#results").removeClass("hide");
-        $("#rScore").text(score);
+        $("#results-score").text(score);
         clearInterval(timeInterval);
 
         if (timeLeft > 0 && score > 0) { //need to make this the high score
@@ -89,7 +89,6 @@ $(document).ready(function () {
         else {
             $("#results-message").text("GAME OVER");
         }
-
         submitScore();
     }
 
@@ -103,17 +102,12 @@ $(document).ready(function () {
         $("#score-card").removeClass("hide");
         clearInterval(timeInterval);
 
-        // when "Play Again" is clicked, the page/quiz refreshes
-        $("#resetBtn").on("click", location.reload());
-    }
-
-    // allows the user to go back to the main page where they have to restart
-    function backReset() {
-        history.back();
+        // when "Play Again" is clicked, the page goes back to the game and it refreshes
+        $("#resetBtn").on("click", history.back);
         location.reload();
     }
 
-    // an object of user information
+    // an array of an object of user information to make the scorecard
     var scoreCard = [
         {
             username: "",
@@ -123,23 +117,31 @@ $(document).ready(function () {
     ];
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
+        console.log("submitScore");
         // user submits their initials, and score and time are added.
-        userForm = $("<form></form>");
-        username = userForm.append('<input type="button" value="button">');
+        userForm = $("#user-info").html("");
+
+        userForm.append('<input type="text">');
+        userForm.append('<input type="submit"> <value="Submit">'); 
+
+
+        console.log(userForm);
+        // console.log(username);
+
         var newScore = score;
         var newTime = timeLeft;
 
-        if (!scoreCard.userScore) {
-            scoreCard.userScore = newScore;
-            scoreCard.userTime = newTime;
-        }
-        else {
-            for (var i = 0; i < scoreCard.length(); i++) {
-                if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i]) {
-                    scoreCard.splice(i, 0, newTime);
-                    viewHighScoreCard();
-                }
-            }
-        }
+        // if (!scoreCard.userScore) {
+        //     scoreCard.userScore = newScore;
+        //     scoreCard.userTime = newTime;
+        // }
+        // else {
+        //     for (var i = 0; i < scoreCard.length(); i++) {
+        //         if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i]) {
+        //             scoreCard.splice(i, 0, newTime);
+        //             viewHighScoreCard();
+        //         }
+        //     }
+        // }
     }
 })
