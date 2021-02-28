@@ -7,61 +7,33 @@
 
 ## Functionalitty
 
-* 
+* Start screen displays how to work the quiz. User can view the high score. User can se ehow much time they have to do the quiz.
+* When the start button is clicked, the user begins the quiz.
+* The quiz page will show one question with 4 buttons, each button has different answer choices.
+* Once the user clicks on a choice, the page will tell them if they were correct or wrong while also displaying the next question.
+* Once the timer reaches 0 or the user completes the questions in time, then the results page will show the user their score, time, and a message.
+    * User will also be allowed to input their name/initials to display on the high score page.
+* Once the user clicks "Submit", they are brought to an updated high scores list.
 
 
 ## Tasks Completed
 
-* 
+* Created IDs in the HTML file to reference via JQuery in the JS file.
+* Used the "hide" CSS to hide and display certain pages on the window.
+* Used a separate JS file to contain the array of quiz questions. In the array are objects for each question, their answer, and the choices.
+* Created a timer from one of the activities we did in class.
+* Created buttons for each choice and compared the user answer to the correct answer.
+* Created an array to store objects for the user's information: username, userScore, and userTime from the current session.
 
 
 ## Website Images
 * Start Page: 
-![Heading and About Me](./Assets/Header.png)
 
 * Quiz: 
-![My Work](./Assets/Work.png)
 
 * Results Page: 
-![Contact Me](./Assets/Contact.png)
 
 * High Scores:
 
-
-
 - - -
 © 2021 Jou Xiong, Northwestern Coding Bootcamp
-
-_______________________________________________________ DELETE BELOW HERE ___________________________________________________
-
-## 
-
-## Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-WHEN the game is over
-THEN I can save my initials and my score
-```
-
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria.
-
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.

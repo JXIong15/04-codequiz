@@ -52,17 +52,15 @@ $(document).ready(function () {
 
     // compares the user choice to the correct answer.
     function evaluateAnswer() {
-        $("#answer").html("");
-
         if ($(this).val() !== quiz[qEl].answer) {
             score--;
             timeLeft -= 5;
-            $("#answer").append("Wrong!");
+            $("#answer").text("Wrong!");
         }
         else {
             score++;
             timeLeft += 5;
-            $("#answer").append("Correct!");
+            $("#answer").text("Correct!");
         }
 
         qEl++;
@@ -96,27 +94,28 @@ $(document).ready(function () {
     var scoreCard = [];
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
-        console.log("submitScore " + user);
+        console.log("submitScore");
         // user submits their initials, and score and time are added.
         userForm = $("#user-info").html("");
         userForm.append('<input type="text">');
-        userForm.append('<input type="submit"> <value="Submit">').onclick(viewHighScoreCard);
+        userForm.append('<input type="submit"> <value="Submit">').on("click", viewHighScoreCard(event));
 
-        for (var i = 0; i < scoreCard.length(); i++) {
-            if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
-                var user = {
-                    username: $('#user-info').val(),
-                    userScore: score,
-                    userTime: timeLeft,
-                }
-                scoreCard.splice(i, 0, user);
-            }
-        }
+        // for (var i = 0; i < scoreCard.length(); i++) {
+        //     if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
+        //         var user = {
+        //             username: $('#user-info').val(),
+        //             userScore: score,
+        //             userTime: timeLeft,
+        //         }
+        //         scoreCard.splice(i, 0, user);
+        //     }
+        // }
     }
 
     // displays the high scores
-    function viewHighScoreCard() {
+    function viewHighScoreCard(event) {
         console.log("high score");
+        event.preventDefault();
         // // clear whatever is currently on the screen
         $("#start").addClass("hide");
         $("#quiz").addClass("hide");
