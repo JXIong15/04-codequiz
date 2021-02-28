@@ -92,7 +92,28 @@ $(document).ready(function () {
         submitScore();
     }
 
-    // NEED THIS TO DISPLAY ON THE OTHER HTML/CALL ON IT
+    // an array of an object of user information to make the scorecard
+    var scoreCard = [];
+    // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
+    function submitScore() {
+        console.log("submitScore " + user);
+        // user submits their initials, and score and time are added.
+        userForm = $("#user-info").html("");
+        userForm.append('<input type="text">');
+        userForm.append('<input type="submit"> <value="Submit">').onclick(viewHighScoreCard);
+
+        for (var i = 0; i < scoreCard.length(); i++) {
+            if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
+                var user = {
+                    username: $('#user-info').val(),
+                    userScore: score,
+                    userTime: timeLeft,
+                }
+                scoreCard.splice(i, 0, user);
+            }
+        }
+    }
+
     // displays the high scores
     function viewHighScoreCard() {
         console.log("high score");
@@ -104,43 +125,6 @@ $(document).ready(function () {
         clearInterval(timeInterval);
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
-        // $("#resetBtn").on("click", location.reload());
-    }
-
-    // an array of an object of user information to make the scorecard
-    var scoreCard = [
-        {username,
-         userScore,
-         userTime
-        }
-    ];
-    // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
-    function submitScore() {
-        console.log("submitScore");
-        // user submits their initials, and score and time are added.
-        userForm = $("#user-info").html("");
-
-        userForm.append('<input type="text">');
-        userForm.append('<input type="submit"> <value="Submit">'); 
-
-
-        console.log(userForm);
-        // console.log(username);
-
-        var newScore = score;
-        var newTime = timeLeft;
-
-        if (!scoreCard.userScore) {
-            scoreCard.userScore = newScore;
-            scoreCard.userTime = newTime;
-        }
-        else {
-            for (var i = 0; i < scoreCard.length(); i++) {
-                if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i.userScore]) {
-                    scoreCard.splice(i, 0, newTime);
-                    viewHighScoreCard();
-                }
-            }
-        }
+        // $("#resetBtn").onclick(location.reload);
     }
 })
