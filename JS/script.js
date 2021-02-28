@@ -104,15 +104,14 @@ $(document).ready(function () {
         clearInterval(timeInterval);
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
-        $("#resetBtn").on("click", location.reload());
+        // $("#resetBtn").on("click", location.reload());
     }
 
     // an array of an object of user information to make the scorecard
     var scoreCard = [
-        {
-            username: "",
-            userScore: "",
-            userTime: ""
+        {username,
+         userScore,
+         userTime
         }
     ];
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
@@ -137,7 +136,7 @@ $(document).ready(function () {
         }
         else {
             for (var i = 0; i < scoreCard.length(); i++) {
-                if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i]) {
+                if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i.userScore]) {
                     scoreCard.splice(i, 0, newTime);
                     viewHighScoreCard();
                 }
