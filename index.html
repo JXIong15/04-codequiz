@@ -5,10 +5,9 @@
     <title>Code Quiz</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="high-score.html" rel="import" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
 <body id="page">
@@ -20,10 +19,9 @@
     <main id="start">
         <h1>Coding Quiz Challenge</h1>
         <p>Answer all of the questions as accurately as possible before the timer hits 0. Each question pertains to
-            topics
-            around coding, such as html, css, and javascript. Challenge yourself to get the highest score in the
-            shortest
-            amount of time. Correct answers will add 5 seconds to the timer. Incorrect answers will subtract 5 seconds from the timer. Think you can beat the clock?
+            topics around coding, such as html, css, and javascript. Challenge yourself to get the highest score in the
+            shortest amount of time. Correct answers will add 5 seconds to the timer. Incorrect answers will subtract 5 
+            seconds from the timer. Think you can beat the clock?
         </p>
         <span>Let's see what you've got!</span> 
         <br><br>
@@ -43,9 +41,13 @@
         <form id="user-info"></form>
     </main>
 
+    <main id="score-card" class="hide">
+        <button id="resetBtn" class="btn btn-danger">Play Again</button>
+    </main>
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="../JS/script.js"></script>
-    <script src="../JS/questions.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/questions.js"></script>
 </body>
 
 </html>

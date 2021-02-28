@@ -92,6 +92,7 @@ $(document).ready(function () {
         submitScore();
     }
 
+    // NEED THIS TO DISPLAY ON THE OTHER HTML/CALL ON IT
     // displays the high scores
     function viewHighScoreCard() {
         console.log("high score");
@@ -103,8 +104,7 @@ $(document).ready(function () {
         clearInterval(timeInterval);
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
-        $("#resetBtn").on("click", history.back);
-        location.reload();
+        $("#resetBtn").on("click", location.reload());
     }
 
     // an array of an object of user information to make the scorecard
@@ -131,17 +131,17 @@ $(document).ready(function () {
         var newScore = score;
         var newTime = timeLeft;
 
-        // if (!scoreCard.userScore) {
-        //     scoreCard.userScore = newScore;
-        //     scoreCard.userTime = newTime;
-        // }
-        // else {
-        //     for (var i = 0; i < scoreCard.length(); i++) {
-        //         if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i]) {
-        //             scoreCard.splice(i, 0, newTime);
-        //             viewHighScoreCard();
-        //         }
-        //     }
-        // }
+        if (!scoreCard.userScore) {
+            scoreCard.userScore = newScore;
+            scoreCard.userTime = newTime;
+        }
+        else {
+            for (var i = 0; i < scoreCard.length(); i++) {
+                if ((newScore === scoreCard[i.userScore] && timeLeft > scoreCard[i.userTime]) || newScore > scoreCard[i]) {
+                    scoreCard.splice(i, 0, newTime);
+                    viewHighScoreCard();
+                }
+            }
+        }
     }
 })
