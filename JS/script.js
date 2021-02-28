@@ -94,11 +94,10 @@ $(document).ready(function () {
     var scoreCard = [];
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
-        console.log("submitScore");
         // user submits their initials, and score and time are added.
         userForm = $("#user-info").html("");
         userForm.append('<input type="text">');
-        userForm.append('<input type="submit"> <value="Submit">').on("click", viewHighScoreCard(event));
+        userForm.append('<input type="submit"> <value="Submit">');
 
         // for (var i = 0; i < scoreCard.length(); i++) {
         //     if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
@@ -116,12 +115,19 @@ $(document).ready(function () {
     function viewHighScoreCard(event) {
         console.log("high score");
         event.preventDefault();
-        // // clear whatever is currently on the screen
+
+        // clear whatever is currently on the screen
         $("#start").addClass("hide");
         $("#quiz").addClass("hide");
         $("#results").addClass("hide");
         $("#score-card").removeClass("hide");
         clearInterval(timeInterval);
+        
+        scoreCard.forEach(function() {
+            var userRow = $("<p>").addClass("style=red").val(scoreCard).text(scoreCard).attr("type", "p");
+            button.on("click", evaluateAnswer);
+            $("#rankings").append();
+        })
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
         // $("#resetBtn").onclick(location.reload);
