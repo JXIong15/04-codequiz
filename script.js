@@ -86,13 +86,17 @@ $(document).ready(function () {
 
     // compares the user choice to the correct answer.
     function evaluateAnswer() {
+        $("#answer").html("");
+        
         if ($(this).val() !== quiz[qEl].answer) {
             score--;
             timeLeft-=5;
+            $("#answer").append("Wrong!");
         }
         else {
             score++;
             timeLeft+=5;
+            $("#answer").append("Correct!");
         }
 
         qEl++;
@@ -127,7 +131,10 @@ $(document).ready(function () {
         // document.getElementById("page").reset();
     }
 
+    // displays the high scores
     function highScoreCard() {
-        $("#page").addClass("hide")
+        $("#start").addClass("hide");
+        $("#quiz").addClass("hide");
+        $("#results").addClass("hide");
     }
 })
