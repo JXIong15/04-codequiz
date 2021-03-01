@@ -1,3 +1,47 @@
 .hide {
     display: none;
 }
+
+span, 
+h3 {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(255, 77, 101);
+}
+
+main h1 {
+    color: black;
+    font-weight: normal;
+}
+
+body hr {
+    background-color: rgb(255, 77, 101);
+}
+
+h3 {
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+div button.btn.btn-danger {
+    margin: 10px;
+}
+
+aside {
+
+}

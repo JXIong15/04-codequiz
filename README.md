@@ -28,12 +28,19 @@
 
 ## Website Images
 * Start Page: 
+![Start Page](./Assets/start.png)
 
 * Quiz: 
+![Quiz Page](./Assets/quiz.png)
 
-* Results Page: 
+* Incorrect Answer on Previous Question: 
+![When previous question is incorrect](./Assets/incorrect.png)
+
+* Results Page:
+![Start Page](./Assets/results.png)
 
 * High Scores:
+![Start Page](./Assets/highscores.png)
 
 - - -
 © 2021 Jou Xiong, Northwestern Coding Bootcamp

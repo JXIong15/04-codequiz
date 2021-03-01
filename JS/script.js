@@ -38,7 +38,7 @@ $(document).ready(function () {
 
     // displays the individual questions and choices for each question on the screen.
     function generateQuizCard() {
-        $("#score-board").text(score);
+        $("#score-board").text("Current Score: " + score);
         var currentQuestion = quiz[qEl];
         $("#quiz-question").text(currentQuestion.question);
 
@@ -77,7 +77,7 @@ $(document).ready(function () {
     function displayResults() {
         $("#quiz").addClass("hide");
         $("#results").removeClass("hide");
-        $("#results-score").text(score);
+        $("#results-score").text("Score: " + score);
         clearInterval(timeInterval);
 
         if (timeLeft > 0 && score > 0) { //need to make this the high score
@@ -149,6 +149,11 @@ $(document).ready(function () {
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
         $("#resetBtn").click(function () {
             $("#page").submit(location.reload()).preventDefault(); // Submit the form
+        });
+        // clears the array of high scores
+        $("#clear").click(function () {
+            scoreCard = []; // clears the high scores
+            viewHighScoreCard();
         });
     }
 })
