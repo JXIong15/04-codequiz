@@ -25,6 +25,12 @@
 * Created buttons for each choice and compared the user answer to the correct answer.
 * Created an array to store objects for the user's information: username, userScore, and userTime from the current session.
 
+## Incomplete Tasks
+
+* Could not figure out how to get my submit button to pass the value into a username variable. After troubleshooting with various LAs, I ultimately gave up once my submit button quit doing anything. I had gotten it to the point of bringing me to the high score page, but the recent LA instructed that I should make the submit button it's own function. Now, the submit button does not work.
+* Could not figoure out how to make the high scores ranking display, though that's mainly because I have nothing to display. Because I am unable to move past the submit button, then I cannot test my high scores.
+    * I know I could've made pseudo inputs, but at this point, I have spent more than 40 hours on this assignment. I am burnt out and ready to move on.
+
 
 ## Website Images
 * Start Page: 
@@ -40,7 +46,7 @@
 ![Start Page](./Assets/results.png)
 
 * High Scores:
-![Start Page](./Assets/highscores.png)
+![Start Page](./Assets/scores.png)
 
 - - -
 © 2021 Jou Xiong, Northwestern Coding Bootcamp

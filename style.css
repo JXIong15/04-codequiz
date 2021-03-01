@@ -18,10 +18,6 @@ body hr {
     background-color: rgb(255, 77, 101);
 }
 
-h3 {
-
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -42,6 +38,29 @@ div button.btn.btn-danger {
     margin: 10px;
 }
 
-aside {
+.hsButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
 
+h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(255, 77, 101);
+    padding: 10px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+table {
+    margin-top: 0%;
+    width: 60%;
+    margin-left: 20%;
+    border-style: solid;
+    border: rgb(255, 77, 101);
+    padding: 10px;
 }

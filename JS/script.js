@@ -141,10 +141,7 @@ $(document).ready(function () {
         $("#score-card").removeClass("hide");
         clearInterval(timeInterval);
 
-        scoreCard.forEach(function () {
-            var userRow = $("<p>").addClass("style=red").val(scoreCard).text(scoreCard).attr("type", "p");
-            $("#rankings").append(userRow);
-        })
+        createScoreCard();
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
         $("#resetBtn").click(function () {
@@ -155,5 +152,12 @@ $(document).ready(function () {
             scoreCard = []; // clears the high scores
             viewHighScoreCard();
         });
+    }
+
+    function createScoreCard() {
+        scoreCard.forEach(function () {
+            var userRow = $("#rankings").addClass("style=red").val(user).text(user).attr("type", "li");
+            $("#rankings").append(userRow).text(userRow);
+        })
     }
 })
