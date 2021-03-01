@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var qEl = 0;
     var score = 0;
-    var timeLeft = 30;
+    var timeLeft = 29;
     var timeInterval;
 
     // when the user clicks on the high score, it takes them to the high score page

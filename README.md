@@ -42,11 +42,14 @@
 * Incorrect Answer on Previous Question: 
 ![When previous question is incorrect](./Assets/incorrect.png)
 
-* Results Page:
-![Start Page](./Assets/results.png)
+* Results Page (Lose):
+![Results Page when user loses](./Assets/results-lose.png)
+
+* Results Page (Win):
+![Results Page when user wins](./Assets/results-win.png)
 
 * High Scores:
-![Start Page](./Assets/scores.png)
+![High Score Page](./Assets/scores.png)
 
 - - -
 © 2021 Jou Xiong, Northwestern Coding Bootcamp
