@@ -87,30 +87,46 @@ $(document).ready(function () {
         else {
             $("#results-message").text("GAME OVER");
         }
+        // user submits their initials, and score and time are added.
+        $("#submitBtn").click(function () {
+            $("#usernameForm").submit(viewHighScoreCard(event)); // Submit the form
+        });
         submitScore();
     }
 
     // an array of an object of user information to make the scorecard
     var scoreCard = [];
+
+    $("#submitBtn").click(function(){        
+        var username ={
+          userName: document.getElementById("username").value,
+        }
+        console.log(user)
+        $("#username").submit(viewHighScoreCard(event)); // Submit the form
+    });
+
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
-        // user submits their initials, and score and time are added.
+        var user = {
+            userName: $("#username").val(),
+            userScore: score,
+            userTime: timeLeft,
+        }
 
-        $("#submitBtn").click(function(){        
-            $("#username").submit(viewHighScoreCard(event)); // Submit the form
-        });
+        console.log(user);
+        console.log(scoreCard);
 
-
-        // for (var i = 0; i < scoreCard.length(); i++) {
-        //     if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
-        //         var user = {
-        //             username: $('#uname').val(),
-        //             userScore: score,
-        //             userTime: timeLeft,
-        //         }
-        //         scoreCard.splice(i, 0, user);
-        //     }
-        // }
+        if (scoreCard === null) {
+            scoreCard.push(user);
+        }
+        else {
+            for (var i = 0; i < scoreCard.length; i++) {
+                if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
+                    scoreCard.splice(i, 0, user);
+                }
+            }
+        }
+        console.log("after loop: " + user);
     }
 
     // displays the high scores
@@ -124,15 +140,15 @@ $(document).ready(function () {
         $("#results").addClass("hide");
         $("#score-card").removeClass("hide");
         clearInterval(timeInterval);
-        
-        scoreCard.forEach(function() {
+
+        scoreCard.forEach(function () {
             var userRow = $("<p>").addClass("style=red").val(scoreCard).text(scoreCard).attr("type", "p");
             $("#rankings").append(userRow);
         })
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
-        $("#resetBtn").click(function(){        
-            $("#username").submit(location.reload()).preventDefault(); // Submit the form
+        $("#resetBtn").click(function () {
+            $("#page").submit(location.reload()).preventDefault(); // Submit the form
         });
     }
 })
