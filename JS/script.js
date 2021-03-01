@@ -127,11 +127,12 @@ $(document).ready(function () {
         
         scoreCard.forEach(function() {
             var userRow = $("<p>").addClass("style=red").val(scoreCard).text(scoreCard).attr("type", "p");
-            button.on("click", evaluateAnswer);
-            $("#rankings").append();
+            $("#rankings").append(userRow);
         })
 
         // when "Play Again" is clicked, the page goes back to the game and it refreshes
-        // $("#resetBtn").onclick(location.reload);
+        $("#resetBtn").click(function(){        
+            $("#username").submit(location.reload()).preventDefault(); // Submit the form
+        });
     }
 })
