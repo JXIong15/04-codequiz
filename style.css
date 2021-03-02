@@ -54,13 +54,18 @@ h4 {
     padding: 10px;
     width: 60%;
     margin-left: 20%;
+    margin-bottom: 0;
 }
 
-table {
-    margin-top: 0%;
+section {
     width: 60%;
     margin-left: 20%;
+    text-align: center;
     border-style: solid;
-    border: rgb(255, 77, 101);
+    border-color: rgb(255, 77, 101);
     padding: 10px;
+    color: black; 
+    font-size: 17px; 
+    word-spacing: 130px;
+    border-top: none;
 }

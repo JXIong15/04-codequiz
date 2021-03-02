@@ -106,21 +106,21 @@ $(document).ready(function () {
                 userScore: score,
                 userTime: timeLeft,
             }
-            console.log("userName: " + user.userName + " score: " + user.userScore + " time: " + user.userTime);
             console.log(user);
 
             if (scoreCard.length === 0) {
                 scoreCard.push(user);
-                console.log(scoreCard);
             }
             else {
                 for (var i = 0; i < scoreCard.length; i++) {
                     if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
                         scoreCard.splice(i, 0, user);
-                        onsole.log("splice: " + scoreCard + " user: " + user);
+                        console.log("splice: " + scoreCard + " user: " + user);
                     }
                 }
             }
+            localStorage.setItem('userValues', JSON.stringify(scoreCard));
+            console.log(scoreCard);
             $("#username").submit(viewHighScoreCard(event)); // Submit the form
         });
     }
@@ -152,8 +152,11 @@ $(document).ready(function () {
 
     function createScoreCard() {
         scoreCard.forEach(function () {
-            var userRow = $("#rankings").addClass("style=red").val(user).text(user).attr("type", "li");
-            $("#rankings").append(userRow).text(userRow);
+            // var userRow = $("#rankings").addClass("style=red").val(user).text(user.userName + " " + user.userScore + " " + user.userTime);
+            // $("#rankings").append(userRow).text(userRow);
+            $("#rankings").text(user.userName + " " + user.userScore + " " + user.userTime + "s");
+            console.log("foreach");
+            console.log(user.userName + " " + user.userScore + " " + user.userTime);
         })
     }
 })
