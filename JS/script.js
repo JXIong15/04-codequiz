@@ -97,36 +97,32 @@ $(document).ready(function () {
     // an array of an object of user information to make the scorecard
     var scoreCard = [];
 
-    $("#submitBtn").click(function(){        
-        var username ={
-          userName: document.getElementById("username").value,
-        }
-        console.log(user)
-        $("#username").submit(viewHighScoreCard(event)); // Submit the form
-    });
-
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
-        var user = {
-            userName: $("#username").val(),
-            userScore: score,
-            userTime: timeLeft,
-        }
+        // function for the submit button
+        $("#submitBtn").click(function(){        
+            user = {
+                userName: $("#username").val(),
+                userScore: score,
+                userTime: timeLeft,
+            }
+            console.log("userName: " + user.userName + " score: " + user.userScore + " time: " + user.userTime);
+            console.log(user);
 
-        console.log(user);
-        console.log(scoreCard);
-
-        if (scoreCard === null) {
-            scoreCard.push(user);
-        }
-        else {
-            for (var i = 0; i < scoreCard.length; i++) {
-                if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
-                    scoreCard.splice(i, 0, user);
+            if (scoreCard.length === 0) {
+                scoreCard.push(user);
+                console.log(scoreCard);
+            }
+            else {
+                for (var i = 0; i < scoreCard.length; i++) {
+                    if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
+                        scoreCard.splice(i, 0, user);
+                        onsole.log("splice: " + scoreCard + " user: " + user);
+                    }
                 }
             }
-        }
-        console.log("after loop: " + user);
+            $("#username").submit(viewHighScoreCard(event)); // Submit the form
+        });
     }
 
     // displays the high scores
