@@ -43,14 +43,14 @@
         <form action="action.php" method="post" id="usernameForm"> 
             <label style="font-weight: bold; font-size: 20px">Name:</label>
             <input type="text" id="username" />
-            <button type="button" id="submitBtn" class="btn btn-danger">Submit</button>
+            <button type="button" id="submitBtn" class="btn btn-danger" style="border-top: solid;">Submit</button>
         </form>
     </main>
 
     <aside id="score-card" class="hide">
         <h4>High Scores</h4>
         <section style="font-weight: bold; font-size: 22px; word-spacing: 100px; background-color: rgb(221, 221, 221);">Name Score Time</section>
-        <section id="rankings"></section>
+        <section id="rankings" style="border-top: none;"></section>
         <div class="hsButtons">
             <button id="resetBtn" class="btn btn-danger">Play Again!</button>
             <button id="clear" class="btn btn-danger"> Clear Scores</button>

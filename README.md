@@ -26,11 +26,16 @@
 * Created an array to store objects for the user's information: userName, userScore, and userTime from the current session.
 * Clicking the Submit button will allow the input to be set as a variable. The High Scores page is then displayed, showing the name, score, and time.
 
+
 ## Incomplete Tasks
 
 * Could not figure out how to put multiple values in the array every time the user wants to play again. I couldn't get localStorage figured out.
 * Could not make the high scores ranking display in order of best to worst, though that's mainly because I can't put more than the current values on the screen.
 * Could not figure out how to clear the table, but that's mainly because I can't retain anything to test it.
+* If the user types more than just one word for their name, then the spacing is already preset, so it looks weird. I didn't have time to make this aesthetically pleasing.
+    * If the user does not input a name, then the spacing is off because there are only 2 values.
+    * I know how to solve these issues, which will take time to learn. However, for simplicity, I left it as is. If I have time, I will revisit it to make containers and/or a table for everything to align nicely.
+
 
 ## Known Bugs
 

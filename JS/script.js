@@ -100,13 +100,12 @@ $(document).ready(function () {
     // on the results page, the user can submit their initials, which will then be logged with their score and time. The scores will be rearranged from greatest to least.
     function submitScore() {
         // function for the submit button
-        $("#submitBtn").click(function(){        
+        $("#submitBtn").click(function(event){        
             user = {
                 userName: $("#username").val(),
                 userScore: score,
                 userTime: timeLeft,
             }
-            console.log(user);
 
             if (scoreCard.length === 0) {
                 scoreCard.push(user);
@@ -115,20 +114,19 @@ $(document).ready(function () {
                 for (var i = 0; i < scoreCard.length; i++) {
                     if ((user.userScore === scoreCard[i.userScore] && userTime > scoreCard[i.userTime]) || userScore > scoreCard[i.userScore]) {
                         scoreCard.splice(i, 0, user);
-                        console.log("splice: " + scoreCard + " user: " + user);
+                        console.log("splice: " + scoreCard + " user: " + user); // to test if array is staying
                     }
                 }
             }
             localStorage.setItem('userValues', JSON.stringify(scoreCard));
             console.log(scoreCard);
-            $("#username").submit(viewHighScoreCard(event)); // Submit the form
+            $("#username").submit(viewHighScoreCard()); // Submit the form
         });
     }
 
     // displays the high scores
-    function viewHighScoreCard(event) {
+    function viewHighScoreCard() {
         console.log("high score");
-        event.preventDefault();
 
         // clear whatever is currently on the screen
         $("#start").addClass("hide");
@@ -156,7 +154,6 @@ $(document).ready(function () {
             // $("#rankings").append(userRow).text(userRow);
             $("#rankings").text(user.userName + " " + user.userScore + " " + user.userTime + "s");
             console.log("foreach");
-            console.log(user.userName + " " + user.userScore + " " + user.userTime);
         })
     }
 })
