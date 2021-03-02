@@ -23,13 +23,19 @@
 * Used a separate JS file to contain the array of quiz questions. In the array are objects for each question, their answer, and the choices.
 * Created a timer from one of the activities we did in class.
 * Created buttons for each choice and compared the user answer to the correct answer.
-* Created an array to store objects for the user's information: username, userScore, and userTime from the current session.
+* Created an array to store objects for the user's information: userName, userScore, and userTime from the current session.
+* Clicking the Submit button will allow the input to be set as a variable. The High Scores page is then displayed, showing the name, score, and time.
 
 ## Incomplete Tasks
 
-* Could not figure out how to get my submit button to pass the value into a username variable. After troubleshooting with various LAs, I ultimately gave up once my submit button quit doing anything. I had gotten it to the point of bringing me to the high score page, but the recent LA instructed that I should make the submit button it's own function. Now, the submit button does not work.
-* Could not figoure out how to make the high scores ranking display, though that's mainly because I have nothing to display. Because I am unable to move past the submit button, then I cannot test my high scores.
-    * I know I could've made pseudo inputs, but at this point, I have spent more than 40 hours on this assignment. I am burnt out and ready to move on.
+* Could not figure out how to put multiple values in the array every time the user wants to play again. I couldn't get localStorage figured out.
+* Could not make the high scores ranking display in order of best to worst, though that's mainly because I can't put more than the current values on the screen.
+* Could not figure out how to clear the table, but that's mainly because I can't retain anything to test it.
+
+## Known Bugs
+
+* Timer is off. The timer on the screen is correct, but when grabbing the time for the high scores, that time is wrong.
+* Hitting the "return" button instead of clicking on "Submit" makes the page go onto an error.
 
 
 ## Website Images
@@ -49,7 +55,7 @@
 ![Results Page when user wins](./Assets/results-win.png)
 
 * High Scores:
-![High Score Page](./Assets/scores.png)
+![High Score Page](./Assets/highscores.png)
 
 - - -
 © 2021 Jou Xiong, Northwestern Coding Bootcamp
