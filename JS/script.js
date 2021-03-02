@@ -120,6 +120,7 @@ $(document).ready(function () {
             }
             localStorage.setItem('userValues', JSON.stringify(scoreCard));
             console.log(scoreCard);
+            event.preventDefault();
             $("#username").submit(viewHighScoreCard()); // Submit the form
         });
     }
