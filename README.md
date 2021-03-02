@@ -40,7 +40,6 @@
 ## Known Bugs
 
 * Timer is off. The timer on the screen is correct, but when grabbing the time for the high scores, that time is wrong.
-* Hitting the "return" button instead of clicking on "Submit" makes the page go onto an error.
 
 
 ## Website Images
