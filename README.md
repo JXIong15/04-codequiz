@@ -5,8 +5,22 @@
 * GitHub Repository Link: https://github.com/JXIong15/04-codequiz
 
 
-## Functionalitty
+## Table of Contents
+* [Introduction](#introduction)
+* [Functionality](#functionality)
+* [Tasks Completed](#tasks-completed)
+* [Incomplete Tasks](#incomplete-tasks)
+* [Technologies Used](#technologies-used)
+* [Known Bugs](#known-bugs)
+* [Website Images](#website-images)
+* [Contact Me](#contact-me)
 
+
+## Introduction
+The Code Quiz is a quiz users can take to test their knowledge on common coding terms and facts. Users can view high scores as well as input their initials to save their scores.
+
+
+## Functionality
 * Start screen displays how to work the quiz. User can view the high score. User can se ehow much time they have to do the quiz.
 * When the start button is clicked, the user begins the quiz.
 * The quiz page will show one question with 4 buttons, each button has different answer choices.
@@ -17,7 +31,6 @@
 
 
 ## Tasks Completed
-
 * Created IDs in the HTML file to reference via JQuery in the JS file.
 * Used the "hide" CSS to hide and display certain pages on the window.
 * Used a separate JS file to contain the array of quiz questions. In the array are objects for each question, their answer, and the choices.
@@ -28,7 +41,6 @@
 
 
 ## Incomplete Tasks
-
 * Could not figure out how to put multiple values in the array every time the user wants to play again. I couldn't get localStorage figured out.
 * Could not make the high scores ranking display in order of best to worst, though that's mainly because I can't put more than the current values on the screen.
 * Could not figure out how to clear the table, but that's mainly because I can't retain anything to test it.
@@ -37,8 +49,13 @@
     * I know how to solve these issues, which will take time to learn. However, for simplicity, I left it as is. If I have time, I will revisit it to make containers and/or a table for everything to align nicely.
 
 
-## Known Bugs
+## Teachnologies Used
+* CSS
+* HTML
+* JS, JQuery
 
+
+## Known Bugs
 * Timer is off. The timer on the screen is correct, but when grabbing the time for the high scores, that time is wrong.
 
 
@@ -60,6 +77,11 @@
 
 * High Scores:
 ![High Score Page](./Assets/highscores.png)
+
+
+## Contact Me
+* Email: jouxiong15@gmail.com
+* LinkedIn: https://www.linkedin.com/in/jou-xiong-109035112/
 
 - - -
 © 2021 Jou Xiong, Northwestern Coding Bootcamp
